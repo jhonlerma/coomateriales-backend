@@ -95,8 +95,12 @@ WSGI_APPLICATION = 'coomateriales_backend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd7eeeu8oe1npkk',
+        'HOST': 'ec2-3-222-74-92.compute-1.amazonaws.com',
+        'USER': 'ictekjrtgadhcj',
+        'PORT': '5432',
+        'PASSWORD': '3e6adfaf5b6e9b01d29a5765e8bc71f77ad6119858d8d99641182c3c7ab8870d',
     }
 }
 
