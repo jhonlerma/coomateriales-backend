@@ -3,5 +3,5 @@ from .user import User
 
 class Account(models.Model):
     id = models.BigAutoField(primary_key=True)
-    user = models.ForeignKey(User, related_name='Account', on_delete=models.CASCADE)
+    user = models.ForeignKey(User, related_name='account', on_delete=models.CASCADE)
     isActive = models.BooleanField(default=True)
