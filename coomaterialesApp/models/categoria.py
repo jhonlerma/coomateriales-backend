@@ -1,4 +1,5 @@
 from django.db import models
+from .familiacatalogo import FamiliaCatalogo
 
 class Categoria(models.Model):
     """Modelo de creación de la base de datos del categoria del producto"""
