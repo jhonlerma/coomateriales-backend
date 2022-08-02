@@ -30,7 +30,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     nombre_usuario = models.CharField('Nombre', max_length= 40)
     apellido_usuario  = models.CharField('Apellido',max_length=40)
     rol_usuarioFk = models.ForeignKey(Rol, related_name='Rol',on_delete=models.SET_NULL, null=True)
-    telefono_usuario  = models.CharField('Telefono',ax_length=40)
+    telefono_usuario  = models.CharField('Telefono',max_length=40)
     correo_usuario  = models.EmailField('Correo',max_length=40, unique=True)
     direccion_usuario  = models.CharField('Direccion',max_length=60)
 
