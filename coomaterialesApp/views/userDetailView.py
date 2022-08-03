@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
 
-from authApp.models.user import User
-from authApp.serializers.userSerializer import UserSerializer
+from coomaterialesApp.models.user import User
+from coomaterialesApp.serializers.userserializer import UserSerializer
 
 class UserDetailView(generics.RetrieveAPIView):
     queryset = User.objects.all()
