@@ -5,8 +5,8 @@ class FabricantelSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fabricante
         fields = [
-            'id_fabricante',
-            'nnombre_fabricante',
+            'id',
+            'nombre_fabricante',
             
         ]
 
@@ -15,16 +15,17 @@ class FabricantelSerializer(serializers.ModelSerializer):
         fabricante = Fabricante.objects.get(id=obj.id)
         
         return {
-            'id_fabricante':fabricante.id_fabricante,
+            'id':fabricante.id,
             'nombre_fabricante':fabricante.nombre_fabricante,
         }
 
     def create(self, validated_data):
         fabricanteInstance = Fabricante.objects.create(**validated_data)
+        fabricanteInstance.save()
         return fabricanteInstance
 
     def update(self, instance, validated_data):
-        instance.id_fabricante = validated_data.get('id_fabricante', instance.id_fabricante)
+        instance.id = validated_data.get('id', instance.id)
         instance.nombre_fabricante = validated_data.get('nombre_fabricante', instance.nombre_fabricante)
         instance.save()
         return instance

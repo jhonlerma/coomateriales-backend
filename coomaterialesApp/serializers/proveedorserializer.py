@@ -5,7 +5,7 @@ class RolSerializer(serializers.ModelSerializer):
     class Meta:
         model = Proveedor
         fields = [
-            'id_proveedor',
+            'id',
             'nit_proveedor',
             'nombre_proveedor',
             'telefono_proveedor',
@@ -18,7 +18,7 @@ class RolSerializer(serializers.ModelSerializer):
         proveedor = Proveedor.objects.get(id=obj.id)
         
         return {
-            'id_proveedor':proveedor.id_proveedor,
+            'id':proveedor.id,
             'nit_proveedor':proveedor.nit_proveedor,
             'nombre_proveedor':proveedor.nombre_proveedor,
             'telefono_proveedor':proveedor.telefono_proveedor,
@@ -28,10 +28,11 @@ class RolSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         proveedorInstance = Proveedor.objects.create(**validated_data)
+        proveedorInstance.save()
         return proveedorInstance
 
     def update(self, instance, validated_data):
-        instance.id_proveedor = validated_data.get('id_proveedor', instance.id_proveedor)
+        instance.id = validated_data.get('id', instance.id)
         instance.nit_proveedor = validated_data.get('nit_proveedor', instance.nit_proveedor)
         instance.nombre_proveedor = validated_data.get('nombre_proveedor', instance.nombre_proveedor)
         instance.telefono_proveedor = validated_data.get('telefono_proveedor', instance.telefono_proveedor)
