@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
             'apellido_usuario',
             'telefono_usuario',
             'correo_usuario',
-            'direccion_usuario'
+            'direccion_usuario',
         ]
 
     def to_representarion(self, obj):
