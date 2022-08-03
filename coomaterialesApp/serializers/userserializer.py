@@ -20,7 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
         return {
             'id': user.id,
             'username': user.username,
-            'nombre_usuario': user.nombre_usuario,
+            # 'nombre_usuario': user.nombre_usuario,
             # 'apellido_usuario': user.apellido_usuario,
             # 'telefono_usuario': user.telefono_usuario,
             # 'correo_usuario': user.correo_usuario,
