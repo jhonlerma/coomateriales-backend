@@ -1,9 +1,12 @@
-from coomaterialesApp.models.proveedor import Proveedor
+from coomaterialesApp.models.producto import Producto
+from coomaterialesApp.models.categoria import Categoria
+from coomaterialesApp.serializers.categoriaserializer import CategoriaSerializer
 from rest_framework import serializers
 
 class RolSerializer(serializers.ModelSerializer):
+    categoria = CategoriaSerializer()
     class Meta:
-        model = Proveedor
+        model = Producto
         fields = [
             'id',
             'nombre_producto',
@@ -18,28 +21,39 @@ class RolSerializer(serializers.ModelSerializer):
 
 
     def to_representarion(self, obj):
-        proveedor = Proveedor.objects.get(id=obj.id)
+        categoria = CategoriaSerializer
+        producto = Producto.objects.get(id=obj.id)
+        categoria = Categoria.objects.get(id=obj.categoria_producto)
         
         return {
-            'id':proveedor.id,
-            'nit_proveedor':proveedor.nit_proveedor,
-            'nombre_proveedor':proveedor.nombre_proveedor,
-            'telefono_proveedor':proveedor.telefono_proveedor,
-            'correo_proveedor':proveedor.correo_proveedor,
-            'direccion_proveedor':proveedor.direccion_proveedor
+            'id':producto.id,
+            'nombre_producto':producto.nombre_producto,
+            'marca_producto':producto.marca_producto,
+            'precio_unit_producto':producto.precio_unit_producto,
+            'resumen_producto':producto.resumen_producto,
+            'detalle_producto':producto.detalle_producto,
+            'categoria_producto':{
+                'id': categoria.id,
+                'nombre_categoria': categoria.nombre_categoria
+            },
+            'fabricante_producto':producto.fabricante_producto,
+            'proveedor_producto':producto.proveedor_producto,
         }
 
     def create(self, validated_data):
-        proveedorInstance = Proveedor.objects.create(**validated_data)
-        proveedorInstance.save()
-        return proveedorInstance
+        productoInstance = Producto.objects.create(**validated_data)
+        productoInstance.save()
+        return productoInstance
 
     def update(self, instance, validated_data):
         instance.id = validated_data.get('id', instance.id)
-        instance.nit_proveedor = validated_data.get('nit_proveedor', instance.nit_proveedor)
-        instance.nombre_proveedor = validated_data.get('nombre_proveedor', instance.nombre_proveedor)
-        instance.telefono_proveedor = validated_data.get('telefono_proveedor', instance.telefono_proveedor)
-        instance.correo_proveedor = validated_data.get('correo_proveedor', instance.correo_proveedor)
-        instance.direccion_proveedor = validated_data.get('direccion_proveedor', instance.direccion_proveedor)
+        instance.nombre_producto = validated_data.get('nombre_producto', instance.nombre_producto)
+        instance.marca_producto = validated_data.get('marca_producto', instance.marca_producto)
+        instance.precio_unit_producto = validated_data.get('precio_unit_producto', instance.precio_unit_producto)
+        instance.resumen_producto = validated_data.get('resumen_producto', instance.resumen_producto)
+        instance.detalle_producto = validated_data.get('detalle_producto', instance.detalle_producto)
+        instance.categoria_producto = validated_data.get('categoria_producto', instance.categoria_producto)
+        instance.fabricante_producto = validated_data.get('fabricante_producto', instance.fabricante_producto)
+        instance.proveedor_producto = validated_data.get('proveedor_producto', instance.proveedor_producto)
         instance.save()
         return instance
