@@ -37,6 +37,6 @@ class UserSerializer(serializers.ModelSerializer):
         instance.apellido_usuario = validated_data.get('apellido_usuario', instance.apellido_usuario)
         instance.telefono_usuario = validated_data.get('telefono_usuario', instance.telefono_usuario)
         instance.correo_usuario = validated_data.get('correo_usuario', instance.correo_usuario)
-        instance.nombre_usuario = validated_data.get('nombre_usuario', instance.nombre_usuario)
+        instance.direccion_usuario = validated_data.get('direccion_usuario', instance.direccion_usuario)
         instance.save()
         return instance
