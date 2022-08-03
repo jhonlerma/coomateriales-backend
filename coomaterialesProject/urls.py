@@ -23,27 +23,41 @@ from coomaterialesApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('login/', TokenObtainPairView.as_view()),
-    path('create/', views.UserCreateView.as_view()),
-    path('user/<int:pk>/', views.UserDetailView.as_view()),
-    # path('userList/',views.userListView.as_view()),
-    # path('userEdit/<int:pk>/',views.userEditView.as_view()),
-    # path('userDelete/<int:pk>/',views.userDeleteView.as_view()),
-    # path('productoCreate/',views.ProductoCreateView.as_view()),
-    # path('productoList/',views.productoListView.as_view()),
-    # path('productoEdit/<int:pk>/',views.productoEditView.as_view()),
-    # path('productoDelete/<int:pk>/',views.productoDeleteView.as_view()),
-    # path('proveedorCreate/',views.ProveedorCreateView.as_view()),
-    # path('proveedorList/',views.proveedorListView.as_view()),
-    # path('proveedorEdit/<int:pk>/',views.proveedorEditView.as_view()),
-    # path('proveedorDelete/<int:pk>/',views.proveedorDeleteView.as_view()),
-    # path('fabricanteCreate/',views.FabricanteCreateView.as_view()),
-    # path('fabricanteList/',views.fabricanteListView.as_view()),
-    # path('fabricanteEdit/<int:pk>/',views.fabricanteEditView.as_view()),
-    # path('fabricanteDelete/<int:pk>/',views.fabricanteDeleteView.as_view()),
-    # path('categoriaCreate/',views.CategoriaCreateView.as_view()),
-    # path('categoriaList/',views.categoriaListView.as_view()),
-    # path('categoriaEdit/<int:pk>/',views.categoriaEditView.as_view()),
-    # path('categoriaDelete/<int:pk>/',views.categoriaDeleteView.as_view()),
-    path('refresh/', TokenRefreshView.as_view())
+    path('refresh/', TokenRefreshView.as_view()),
+
+    # USER PATHS
+    path('user/create/', views.UserCreateView.as_view()),
+    path('user/read/<int:pk>/', views.UserDetailView.as_view()),
+    path('user/update/',views.userEditView.as_view()),
+    path('user/delete/', views.UserDeleteView.as_view()),
+    path('user/list/',views.userListView.as_view()),
+
+    # CATEGORIA PATHS
+    path('categoria/create/', views.UserCreateView.as_view()),
+    path('categoria/read/<int:pk>/', views.UserDetailView.as_view()),
+    path('categoria/update/',views.userEditView.as_view()),
+    path('categoria/delete/', views.UserDeleteView.as_view()),
+    path('categoria/list/',views.userListView.as_view()),
+
+    # FABRICANTE PATHS
+    path('fabricante/create/', views.UserCreateView.as_view()),
+    path('fabricante/read/<int:pk>/', views.UserDetailView.as_view()),
+    path('fabricante/update/',views.userEditView.as_view()),
+    path('fabricante/delete/', views.UserDeleteView.as_view()),
+    path('fabricante/list/',views.userListView.as_view()),
+
+    # PROVEEDOR PATHS
+    path('proveedor/create/', views.UserCreateView.as_view()),
+    path('proveedor/read/<int:pk>/', views.UserDetailView.as_view()),
+    path('proveedor/update/',views.userEditView.as_view()),
+    path('proveedor/delete/', views.UserDeleteView.as_view()),
+    path('proveedor/list/',views.userListView.as_view()),
+
+    # PRODUCTO PATHS
+    path('producto/create/', views.UserCreateView.as_view()),
+    path('producto/read/<int:pk>/', views.UserDetailView.as_view()),
+    path('producto/update/',views.userEditView.as_view()),
+    path('producto/delete/', views.UserDeleteView.as_view()),
+    path('producto/list/',views.userListView.as_view()),
 
 ]
