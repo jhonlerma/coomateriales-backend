@@ -1,5 +1,4 @@
 from coomaterialesApp.models.user import User
-from coomaterialesApp.models.rol import Rol
 from rest_framework import serializers
 
 class UserSerializer(serializers.ModelSerializer):

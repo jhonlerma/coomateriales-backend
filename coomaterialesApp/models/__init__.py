@@ -1,5 +1,4 @@
 from .user import User
-from .rol import Rol
 from .categoria import Categoria
 from .fabricante import Fabricante
 from .familiacatalogo import FamiliaCatalogo
