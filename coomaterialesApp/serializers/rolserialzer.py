@@ -19,7 +19,7 @@ class RolSerializer(serializers.ModelSerializer):
         return rolInstance
 
     def update(self, instance, validated_data):
-        instance.id_rol = validated_data.get('id_rol', instance.id )
+        instance.id_rol = validated_data.get('id_rol', instance.id_rol )
         instance.nombre_rol = validated_data.get('nombre_rol', instance.nombre_rol)
         instance.save()
         return instance
