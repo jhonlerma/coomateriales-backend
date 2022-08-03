@@ -19,5 +19,4 @@ class UserDetailView(generics.RetrieveAPIView):
         
         if valid_data['user_id'] != kwargs['pk']:
             return Response({'fockyiumen nea'}, status=status.HTTP_401_UNAUTHORIZED)
-        else:
-            return super().get(request, *args, **kwargs)
+        return super().get(request, *args, **kwargs)

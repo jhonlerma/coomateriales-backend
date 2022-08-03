@@ -26,10 +26,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     username = models.CharField('Username', max_length=30, unique=True)
     password = models.CharField('Password', max_length=256)
     nombre_usuario = models.CharField('Name', max_length= 40)
-    apellido_usuario  = models.CharField('LastName',max_length=40)
-    telefono_usuario  = models.CharField('Phone', max_length=40)
-    correo_usuario  = models.EmailField('Email', max_length=256)
-    direccion_usuario  = models.CharField('Address', max_length=60)
+    apellido_usuario = models.CharField('LastName',max_length=40)
+    telefono_usuario = models.CharField('Phone', max_length=40)
+    correo_usuario = models.EmailField('Email', max_length=256)
+    direccion_usuario = models.CharField('Address', max_length=60)
 
     def save(self, **Kwargs):
         # Creación de encriptación de la contraseña
