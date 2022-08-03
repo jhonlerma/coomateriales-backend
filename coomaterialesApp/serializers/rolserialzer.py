@@ -11,9 +11,15 @@ class RolSerializer(serializers.ModelSerializer):
         
         return {
             'id': rol.id_rol,
-            'username': rol.nombre_rol,
+            'nombre_rol': rol.nombre_rol,
         }
 
     def create(self, validated_data):
         rolInstance = Rol.objects.create(**validated_data)
         return rolInstance
+
+    def update(self, instance, validated_data):
+        instance.id_rol = validated_data.get('id_rol', instance.id )
+        instance.nombre_rol = validated_data.get('nombre_rol', instance.nombre_rol)
+        instance.save()
+        return instance
