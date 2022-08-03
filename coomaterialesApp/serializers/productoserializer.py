@@ -3,7 +3,7 @@ from coomaterialesApp.models.categoria import Categoria
 from coomaterialesApp.serializers.categoriaserializer import CategoriaSerializer
 from rest_framework import serializers
 
-class RolSerializer(serializers.ModelSerializer):
+class ProductoSerializer(serializers.ModelSerializer):
     categoria = CategoriaSerializer()
     class Meta:
         model = Producto

@@ -1,0 +1,5 @@
+from .categoriaserializer import CategoriaSerializer
+from .fabricanteserializer import FabricantelSerializer
+from .productoserializer import ProductoSerializer
+from .proveedorserializer import ProveedorSerializer
+from .userserializer import UserSerializer
