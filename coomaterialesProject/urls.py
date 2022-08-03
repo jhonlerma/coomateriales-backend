@@ -40,7 +40,7 @@ urlpatterns = [
     # path('fabricanteList/',views.fabricanteListView.as_view()),
     # path('fabricanteEdit/<int:pk>/',views.fabricanteEditView.as_view()),
     # path('fabricanteDelete/<int:pk>/',views.fabricanteDeleteView.as_view()),
-    path('categoriaCreate/',views.CategoriaCreateView.as_view()),
+    # path('categoriaCreate/',views.CategoriaCreateView.as_view()),
     # path('categoriaList/',views.categoriaListView.as_view()),
     # path('categoriaEdit/<int:pk>/',views.categoriaEditView.as_view()),
     # path('categoriaDelete/<int:pk>/',views.categoriaDeleteView.as_view()),
