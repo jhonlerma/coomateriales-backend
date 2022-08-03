@@ -2,12 +2,11 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,PermissionsMixin,BaseUserManager
 from django.contrib.auth.hashers import make_password
 
-
 class UserManager(BaseUserManager ):
     def create_user(self, username, password = None):
-        """Creación del usuario """
+        # Creación del usuario
         if not username:
-            """Validación si el usuario ya existe"""
+            # Validación si el usuario ya existe
             raise ValueError('Usuario ya existente')
         user = self.model(username = username)
         user.set_password(password)
@@ -15,17 +14,17 @@ class UserManager(BaseUserManager ):
         return user
     
     def create_superuser (self, username, password = None):
-        """Creación del super usuario"""
+        # Creación del super usuario
         user = self.create_user(username= username, password=password,)
         user.is_admin = True
         user.save(using = self._db)
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    """Creación de la tabla de la base de datos"""
-    id = models.BigAutoField('Username', primary_key=True)
-    username = models.CharField('Password', max_length=30, unique=True)
-    password = models.CharField(max_length=256)
+    #Creación de la tabla de la base de datos
+    id = models.BigAutoField(primary_key=True)
+    username = models.CharField('Username', max_length=30, unique=True)
+    password = models.CharField('Password', max_length=256)
     # nombre_usuario = models.CharField(max_length= 40)
     # apellido_usuario  = models.CharField(max_length=40)
     # telefono_usuario  = models.CharField(max_length=40)
