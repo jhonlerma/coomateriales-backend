@@ -1,5 +1,3 @@
-from socket import if_nametoindex
-from ssl import VerifyMode
 from django.conf import settings
 from rest_framework import generics, status
 from rest_framework.response import Response

@@ -25,12 +25,12 @@ class User(AbstractBaseUser, PermissionsMixin):
     """Creación de la tabla de la base de datos"""
     id = models.BigAutoField('Username', primary_key=True)
     username = models.CharField('Password', max_length=30, unique=True)
-    password = models.CharField( max_length=256)
-    nombre_usuario = models.CharField(max_length= 40)
-    apellido_usuario  = models.CharField(max_length=40)
-    telefono_usuario  = models.CharField(max_length=40)
-    correo_usuario  = models.EmailField(max_length=40, unique=True)
-    direccion_usuario  = models.CharField(max_length=60)
+    password = models.CharField(max_length=256)
+    # nombre_usuario = models.CharField(max_length= 40)
+    # apellido_usuario  = models.CharField(max_length=40)
+    # telefono_usuario  = models.CharField(max_length=40)
+    # correo_usuario  = models.EmailField(max_length=40, unique=True)
+    # direccion_usuario  = models.CharField(max_length=60)
 
     def save(self, **Kwargs):
         """Creación de encriptación de la contraseña"""
