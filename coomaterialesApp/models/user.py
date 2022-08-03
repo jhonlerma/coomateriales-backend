@@ -23,8 +23,8 @@ class UserManager(BaseUserManager ):
 
 class User(AbstractBaseUser, PermissionsMixin):
     """Creación de la tabla de la base de datos"""
-    id = models.BigAutoField(primary_key=True)
-    username = models.CharField(max_length=30, unique=True)
+    id = models.BigAutoField('Username', primary_key=True)
+    username = models.CharField('Password', max_length=30, unique=True)
     password = models.CharField( max_length=256)
     nombre_usuario = models.CharField(max_length= 40)
     apellido_usuario  = models.CharField(max_length=40)
