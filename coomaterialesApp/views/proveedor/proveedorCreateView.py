@@ -13,15 +13,4 @@ class ProveedorCreateView(views.APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        #acceso al request.data
-        # userData = {
-        #     "id": request.data["id"],
-        #     "nit_proveedor": request.data["nit_proveedor"],
-        #     "nombre_proveedor": request.data["nombre_proveedor"],
-        #     "telefono_proveedor": request.data["telefono_proveedor"],
-        #     "correo_proveedor": request.data["correo_proveedor"],
-        #     "direccion_proveedor": request.data["direccion_proveedor"], 
-        # }
-
-        #envío de la respuesta con validación y el status de creación 201  
-        return Response (serializer.data, status= status.HTTP_201_CREATED)
+        return Response ('Creado Exitosamente!!!\n' + serializer.data, status= status.HTTP_201_CREATED)
