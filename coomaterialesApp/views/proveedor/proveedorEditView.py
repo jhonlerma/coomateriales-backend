@@ -10,7 +10,7 @@ from coomaterialesApp.models import Proveedor
 class ProveedorEditView(views.APIView):
     #List del usuario por metodo get
     def put(self,request,*args,** kwargs):
-        queryset = Proveedor.objects.get(id=kwargs['pk'])
+        queryset = Proveedor.objects.get(id=request.data['id'])
         serializer = ProveedorSerializer(queryset, data=request.data)
 
         if serializer.is_valid():
