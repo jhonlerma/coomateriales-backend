@@ -24,4 +24,4 @@ class ProveedorCreateView(views.APIView):
         # }
 
         #envío de la respuesta con validación y el status de creación 201  
-        return Response (request, status= status.HTTP_201_CREATED)
+        return Response (serializer.data, status= status.HTTP_201_CREATED)
