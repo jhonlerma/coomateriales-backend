@@ -1,7 +1,7 @@
 from coomaterialesApp.models.fabricante import Fabricante
 from rest_framework import serializers
 
-class FabricantelSerializer(serializers.ModelSerializer):
+class FabricanteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fabricante
         fields = [
