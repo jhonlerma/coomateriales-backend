@@ -13,4 +13,4 @@ class ProveedorCreateView(views.APIView):
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
-        return Response ('Creado Exitosamente!!!\n' + serializer.data, status= status.HTTP_201_CREATED)
+        return Response (serializer.data, status= status.HTTP_201_CREATED)
