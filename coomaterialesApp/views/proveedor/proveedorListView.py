@@ -9,7 +9,7 @@ from coomaterialesApp.models.proveedor import Proveedor
 class ProveedorListView(views.APIView):
     permission_classes = [IsAuthenticated]
     #List del usuario por metodo get
-    def post(self,request,*args,** kwargs):
+    def get(self,request,*args,** kwargs):
         queryset = Proveedor.objects.all()
         serializer = ProveedorSerializer(queryset, many=True)
 
