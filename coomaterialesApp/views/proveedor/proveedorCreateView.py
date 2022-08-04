@@ -7,6 +7,7 @@ from coomaterialesApp.serializers.proveedorserializer import ProveedorSerializer
 
 
 class ProveedorCreateView(views.APIView):
+    permission_classes = [IsAuthenticated]
     #List del usuario por metodo get
     def post(self,request,*args,** kwargs):
         serializer = ProveedorSerializer(data = request.data)
