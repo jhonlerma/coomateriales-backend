@@ -1,13 +1,15 @@
 from rest_framework import status,views
 from rest_framework.response import Response #Retornanr la respuesta al usuario
-from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer #serializador que se encarga apartir del usuario y contraseña genera los token y los asocian 
 from coomaterialesApp.serializers.userserializer import UserSerializer #serializador de user
+from coomaterialesApp.models.user import User
 
 
 class UserListView(views.APIView):
+    permission_classes = [IsAuthenticated]
     #List del usuario por metodo get
     def get(self,request,*args,** kwargs):
-        # codigo aqui borrar el pass
-        pass
+        queryset = User.objects.all()
+        serializer = UserSerializer(queryset, many=True)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
