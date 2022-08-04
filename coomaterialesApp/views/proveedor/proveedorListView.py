@@ -5,7 +5,6 @@ from coomaterialesApp.serializers.proveedorserializer import ProveedorSerializer
 from coomaterialesApp.models.proveedor import Proveedor
 
 
-
 class ProveedorListView(views.APIView):
     permission_classes = [IsAuthenticated]
     #List del usuario por metodo get
