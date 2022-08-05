@@ -29,7 +29,6 @@ urlpatterns = [
     path('user/create/', views.UserCreateView.as_view()),
     path('user/read/<int:pk>/', views.UserDetailView.as_view()),
     path('user/update/',views.UserEditView.as_view()),
-    path('user/delete/<int:pk>/', views.UserDeleteView.as_view()),
     path('user/list/',views.UserListView.as_view()),
 
     # CATEGORIA PATHS
