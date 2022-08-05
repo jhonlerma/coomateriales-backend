@@ -1,6 +1,5 @@
 from .user.userCreateView import UserCreateView
 from .user.userEditView import UserEditView
-from .user.userDeleteView import UserDeleteView
 from .user.userDetailView import UserDetailView
 from .user.userListView import UserListView
 
