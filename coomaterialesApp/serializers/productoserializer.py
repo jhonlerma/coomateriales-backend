@@ -31,7 +31,7 @@ class ProductoSerializer(serializers.ModelSerializer):
         proveedor = Categoria.objects.get(id=obj.proveedor)
 
         return {
-            'id':producto.id,
+            'id':'producto.id',
             'nombre_producto':producto.nombre_producto,
             'marca_producto':producto.marca_producto,
             'precio_unit_producto':producto.precio_unit_producto,
