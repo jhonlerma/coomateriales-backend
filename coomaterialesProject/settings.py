@@ -67,7 +67,7 @@ REST_FRAMEWORK = {
 AUTH_USER_MODEL = 'coomaterialesApp.User' # modelo usado para la autenticación
 
 SIMPLE_JWT ={
-    'ACCESS_TOKEN_LIFETIME' : timedelta(days = 20), # duración de 5 minutos
+    'ACCESS_TOKEN_LIFETIME' : timedelta(minutes = 20), # duración de 5 minutos
     'REFRESH_TOKEN_LIFETIME': timedelta(days = 1), #duración de 1 día
     'ROTATE_FRESH_TOKENS': False, # Rotación del token 
     'BlACKLIST_AFTER_ROTATION': True, #lista negra de los tokens para no rep[etirlos
