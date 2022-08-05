@@ -5,12 +5,14 @@ from coomaterialesApp.serializers.userserializer import UserSerializer #serializ
 from coomaterialesApp.models.user import User
 
 
-class UserDeleteView(views.APIView):
+class UserEditView(views.APIView):
     permission_classes = [IsAuthenticated]
     #List del usuario por metodo get
-    def delete(self,request,*args,** kwargs):
-        queryset = User.objects.get(id=kwargs['pk'])
-        serializer = UserSerializer(queryset, many=False)
-        queryset.delete()
+    def put(self,request,*args,** kwargs):
+        queryset = User.objects.get(id=request.data['id'])
+        serializer = UserSerializer(queryset, data=request.data)
 
-        return Response(serializer.data, status=status.HTTP_200_OK)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
