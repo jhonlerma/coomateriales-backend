@@ -29,7 +29,6 @@ class UserSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         userInstance = User.objects.create(**validated_data)
-        userInstance.save()
         return userInstance
 
     def update(self, instance, validated_data):
