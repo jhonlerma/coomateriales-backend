@@ -13,7 +13,7 @@ class Producto(models.Model):
     resumen_producto = models.CharField(max_length=40)
     detalle_producto  = models.CharField(max_length=255)
     categoria_producto = models.ForeignKey(Categoria, on_delete=models.SET_NULL, null=True)
-    fabricante_producto = models.CharField(max_length=255)
+    fabricante_producto = models.ForeignKey(Fabricante, on_delete=models.SET_NULL, null=True)
     proveedor_producto = models.ForeignKey(Proveedor, on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
