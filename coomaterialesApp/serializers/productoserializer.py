@@ -21,7 +21,6 @@ class ProductoSerializer(serializers.ModelSerializer):
 
 
     def to_representarion(self, obj):
-        categoria = CategoriaSerializer
         producto = Producto.objects.get(id=obj.id)
         categoria = Categoria.objects.get(id=obj.categoria_producto)
         
