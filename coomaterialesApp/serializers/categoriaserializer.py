@@ -25,6 +25,6 @@ class CategoriaSerializer(serializers.ModelSerializer):
 
     def update(self, instance, validated_data):
         instance.id = validated_data.get('id', instance.id)
-        instance.nombre_categoria = validated_data.get('nombre_categoria', instance.nombre_familiacat)
+        instance.nombre_categoria = validated_data.get('nombre_categoria', instance.nombre_categoria)
         instance.save()
         return instance
