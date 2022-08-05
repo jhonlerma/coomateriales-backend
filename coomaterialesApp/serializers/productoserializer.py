@@ -18,9 +18,9 @@ class ProductoSerializer(serializers.ModelSerializer):
             'precio_unit_producto',
             'resumen_producto',
             'detalle_producto',
-            'categoria_producto',
-            'fabricante_producto',
-            'proveedor_producto'
+            'categoria',
+            'fabricante',
+            'proveedor'
         ]
 
 
