@@ -6,7 +6,7 @@ class CategoriaSerializer(serializers.ModelSerializer):
         model = Categoria
         fields = [
             'id',
-            'nombre_categoria',
+            'categoria',
         ]
 
 
