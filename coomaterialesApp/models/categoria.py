@@ -6,4 +6,4 @@ class Categoria(models.Model):
     nombre_categoria = models.CharField(max_length= 40)
 
     def __str__(self):
-        return f' Familia: {self.familiacat_categoriaFk} Catálogo: {self.nombre_categoria}'
+        return f' Catálogo: {self.nombre_categoria}'
