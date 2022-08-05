@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 from .user.userCreateView import UserCreateView
 from .user.userEditView import UserEditView
 from .user.userDeleteView import UserDeleteView
@@ -27,3 +28,5 @@ from .proveedor.proveedorEditView import ProveedorEditView
 from .proveedor.proveedorDeleteView import ProveedorDeleteView
 from .proveedor.proveedorDetailView import ProveedorDetailView
 from .proveedor.proveedorListView import ProveedorListView
+=======
+>>>>>>> c768bcbf1e0685124ac60942020cf15b66037ac5
