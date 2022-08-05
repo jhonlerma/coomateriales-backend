@@ -24,23 +24,23 @@ class ProductoSerializer(serializers.ModelSerializer):
         ]
 
 
-    def to_representarion(self, obj):
-        producto = Producto.objects.get(id=obj.id)
-        categoria = Categoria.objects.get(id=obj.categoria)
-        fabricante = Categoria.objects.get(id=obj.fabricante)
-        proveedor = Categoria.objects.get(id=obj.proveedor)
+    # def to_representarion(self, obj):
+    #     producto = Producto.objects.get(id=obj.id)
+    #     categoria = Categoria.objects.get(id=obj.categoria)
+    #     fabricante = Categoria.objects.get(id=obj.fabricante)
+    #     proveedor = Categoria.objects.get(id=obj.proveedor)
 
-        return {
-            'id':producto.id,
-            'nombre_producto':producto.nombre_producto,
-            'marca_producto':producto.marca_producto,
-            'precio_unit_producto':producto.precio_unit_producto,
-            'resumen_producto':producto.resumen_producto,
-            'detalle_producto':producto.detalle_producto,
-            'categoria':  categoria.nombre_categoria,
-            'fabricante':fabricante.nombre_fabricante,
-            'proveedor':proveedor.nombre_proveedor,
-        }
+    #     return {
+    #         'id':producto.id,
+    #         'nombre_producto':producto.nombre_producto,
+    #         'marca_producto':producto.marca_producto,
+    #         'precio_unit_producto':producto.precio_unit_producto,
+    #         'resumen_producto':producto.resumen_producto,
+    #         'detalle_producto':producto.detalle_producto,
+    #         'categoria':  categoria.nombre_categoria,
+    #         'fabricante':fabricante.nombre_fabricante,
+    #         'proveedor':proveedor.nombre_proveedor,
+    #     }
 
     def create(self, validated_data):
         productoInstance = Producto.objects.create(**validated_data)
