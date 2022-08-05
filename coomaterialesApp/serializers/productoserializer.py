@@ -6,9 +6,9 @@ from coomaterialesApp.serializers.proveedorserializer import ProveedorSerializer
 from rest_framework import serializers
 
 class ProductoSerializer(serializers.ModelSerializer):
-    categoria = serializers.RelatedField()
-    fabricante = serializers.RelatedField()
-    proveedor = serializers.RelatedField()
+    categoria = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+    fabricante = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
+    proveedor = serializers.PrimaryKeyRelatedField(many=False, read_only=True)
     class Meta:
         model = Producto
         fields = [
